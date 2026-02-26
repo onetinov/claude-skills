@@ -1,0 +1,29 @@
+{
+  "skill_name": "agentmaker-ideation-triage",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I remain low key obsessed with the idea of Axon for code indexing, embedding and a graph database between systematically linked concepts like code function definitions and where they are called.",
+      "expected_output": "Classifies as 'extension'. Should find docs/concepts/user-knowledge-graph.md which explicitly mentions Axon, embeddings, and graph database. Should note what's already there (Axon-inspired user world graph, Graphiti, pgvector) vs what's new (code-specific indexing angle, function def/callsite linking).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "What if users could build custom personas with their own system prompts — like, a user could define a 'my accountant' persona that always knows their business structure?",
+      "expected_output": "Classifies as 'extension'. Should find docs/concepts/routing-and-personas.md (persona system built in Sprint 5) and potentially personal-data-vault.md. New angle: user-defined personas with persistent personal context vs the built-in fixed personas we have now.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "random thought: we should probably think about what happens when a user's Stripe payment fails mid-agent-run — like the agent is halfway through booking flights and we cut it off",
+      "expected_output": "Classifies as 'new' or 'extension'. May find platform-product-metering.md (metering/billing context) but the mid-run payment failure / graceful degradation angle is not captured. Should offer to write a backlog entry.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I keep thinking about GDPR and what happens when a user asks us to delete their account — do we have a plan for that?",
+      "expected_output": "Classifies as 'overlap'. Should find docs/concerns/gdpr-identity-deletion-model.md which covers exactly this. Should point to it directly and not re-document.",
+      "files": []
+    }
+  ]
+}
