@@ -1,22 +1,30 @@
 # claude-skills
 
-Personal Claude Code skills. Install by copying any skill directory to `~/.claude/skills/` — Claude Code picks them up automatically on next session.
+Personal Claude Code skills. Install any skill by copying its directory to `~/.claude/skills/` — Claude Code picks it up automatically on next session.
 
 ## Skills
 
-### `agentmaker-ideation-triage`
+### `thinking-partner`
 
-Detects when you're brainstorming or expressing an idea in the AgentMaker project and searches the project docs before responding. Classifies the idea as:
+A two-phase skill that first checks whether your idea already exists in project docs, then acts as a structured thinking partner to develop and pressure-test it.
 
-- **overlap** — already captured in docs, points to the exact file
+**Phase 1 — Ideation Triage:** Discovers project documentation, searches for related concepts, and classifies the idea as:
+- **overlap** — already captured, points to the exact file
 - **extension** — builds on existing thinking, identifies what's new
 - **new** — genuinely novel, offers to write it up immediately
 
-Triggers on phrases like "I keep thinking about...", "random thought:", "what if we...", "I'm obsessed with...", "we should probably..."
+**Phase 2 — Thinking Framework:** Develops the idea through five stages:
+1. **Clarify** — forces articulation of the actual claim
+2. **Stress-Test** — finds weaknesses before the audience does
+3. **Reconstruct** — rebuilds the idea stronger
+4. **Structure** — produces a detailed outline to build from
+5. **Refine** — targeted critique of the draft
+
+Triggers on phrases like "I keep thinking about...", "random thought:", "what if we...", "I'm obsessed with...", "help me think through...", "I have this idea for..."
 
 **Install:**
 ```bash
-cp -r agentmaker-ideation-triage ~/.claude/skills/
+cp -r thinking-partner ~/.claude/skills/
 ```
 
-**Note:** The docs path is hardcoded to `/Users/rcherry/src/agentmaker/docs/`. Fork and update `SKILL.md` for your own project path.
+Works with any project — dynamically discovers docs in `docs/`, `README.md`, `ARCHITECTURE.md`, and other common locations.
